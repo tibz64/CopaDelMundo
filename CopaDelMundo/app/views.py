@@ -6,6 +6,7 @@ from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
 from datetime import datetime
+from django.http import HttpResponse
 
 def home(request):
     """Renders the home page."""
@@ -44,3 +45,11 @@ def about(request):
             'year':datetime.now().year,
         }
     )
+
+
+def index(request):
+    message = "Salut tout le monde !"
+    return HttpResponse(message)
+
+def team(request):
+    return HttpResponse("Meet the team")

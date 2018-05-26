@@ -4,6 +4,7 @@ Definition of urls for CopaDelMundo.
 
 from datetime import datetime
 from django.conf.urls import url
+from django.urls import path, re_path
 import django.contrib.auth.views
 
 import app.forms
@@ -16,7 +17,8 @@ import app.views
 
 urlpatterns = [
     # Examples:
-    url(r'^$', app.views.home, name='home'),
+    url(r'^$', app.views.index),
+    path('team',app.views.team),
     url(r'^contact$', app.views.contact, name='contact'),
     url(r'^about', app.views.about, name='about'),
     url(r'^login/$',
